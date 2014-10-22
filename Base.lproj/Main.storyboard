@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="EAGLView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="glView" destination="kh9-bI-dsS" id="BtL-Cd-w78"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="330"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ehw-JC-Igf">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2RL-EF-TDn" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zcV-Pv-rA3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fve-MK-Lu4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6BE-7i-I0L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdY-4H-mR7">
+                                <rect key="frame" x="0.0" y="69" width="320" height="499"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35q-Nm-Ntn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHv-EU-f3h">
+                                        <rect key="frame" x="266" y="34" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="CNO-ow-9qU"/>
+                                            <constraint firstAttribute="height" constant="30" id="MRy-7r-JhE"/>
+                                        </constraints>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="2RL-EF-TDn" eventType="touchUpInside" id="WqD-gg-FRS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PHv-EU-f3h" secondAttribute="bottom" constant="8" id="PDf-yI-aba"/>
+                                    <constraint firstAttribute="height" constant="72" id="oTm-BN-mmc"/>
+                                    <constraint firstAttribute="trailing" secondItem="PHv-EU-f3h" secondAttribute="trailing" constant="8" id="paR-ZE-W20"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kdY-4H-mR7" firstAttribute="leading" secondItem="6BE-7i-I0L" secondAttribute="leading" id="0AY-n3-Dhj"/>
+                            <constraint firstItem="kdY-4H-mR7" firstAttribute="top" secondItem="6BE-7i-I0L" secondAttribute="top" constant="69" id="9Ta-eB-yfg"/>
+                            <constraint firstItem="35q-Nm-Ntn" firstAttribute="top" secondItem="6BE-7i-I0L" secondAttribute="top" id="JfZ-lJ-edG"/>
+                            <constraint firstItem="35q-Nm-Ntn" firstAttribute="leading" secondItem="6BE-7i-I0L" secondAttribute="leading" id="MJ5-x9-ife"/>
+                            <constraint firstAttribute="trailing" secondItem="kdY-4H-mR7" secondAttribute="trailing" id="Var-1S-Nzx"/>
+                            <constraint firstItem="Fve-MK-Lu4" firstAttribute="top" secondItem="kdY-4H-mR7" secondAttribute="bottom" id="hu8-Bg-zOF"/>
+                            <constraint firstAttribute="trailing" secondItem="35q-Nm-Ntn" secondAttribute="trailing" id="sMw-0E-qRR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="kdY-4H-mR7" id="qzq-zE-5Sw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYT-tB-6dX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="196" y="1032"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
